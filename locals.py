@@ -10,7 +10,7 @@ datatime = datetime.now().strftime("%Y-%m-%d %H_%M_%S")
 try:
 	while True:
 
-		queryStr2 = 'https://restapi.amap.com/v3/weather/weatherInfo?city=320100&key=060fc55def82a6e495f4bb0d789689d1'
+		queryStr2 = 'https://restapi.amap.com/v3/weather/weatherInfo?city=320100&key=yourkey'
 		encodedStr2 = urllib.parse.quote(queryStr2, safe="/:=&?#+!$,;'@()*[]")
 		w=requests.get(encodedStr2)
 		w=w.text
@@ -51,7 +51,7 @@ try:
 				ss3=ss1+','+ss2
 				locals.append(ss3)			
 		for local in locals:
-			queryStr1 = 'https://restapi.amap.com/v3/traffic/status/circle?location='+local+'&radius=50&key=060fc55def82a6e495f4bb0d789689d1'
+			queryStr1 = 'https://restapi.amap.com/v3/traffic/status/circle?location='+local+'&radius=50&key=yourkey'
 			encodedStr1 = urllib.parse.quote(queryStr1, safe="/:=&?#+!$,;'@()*[]")
 			r=requests.get(encodedStr1)
 			r=r.text
